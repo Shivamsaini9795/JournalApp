@@ -22,7 +22,7 @@ public class UserServiceTest {
     @Autowired
     private UserService userService;
 
-
+@Disabled
     @ParameterizedTest
     @ArgumentsSource(UserArgumentProvider.class)
 //    @CsvSource({

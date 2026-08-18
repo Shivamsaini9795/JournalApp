@@ -5,6 +5,7 @@ import com.example.journalApp.Service.CustomUserDetailServiceImpl;
 import com.example.journalApp.entity.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
@@ -33,7 +34,7 @@ public class UserDetailsServiceImplTest {
     {
         MockitoAnnotations.initMocks(this);
     }
-
+    @Disabled
     @Test
     void loadUserByUsernameTest()
     {

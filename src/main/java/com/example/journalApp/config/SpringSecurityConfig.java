@@ -49,7 +49,7 @@ public class SpringSecurityConfig {
 //                        .requestMatchers("/user/**").permitAll()
                         .requestMatchers("/public/**").permitAll()
 
-                        .requestMatchers("/journal/**,/user/**").authenticated()
+                        .requestMatchers("/journal/**", "/user/**").authenticated()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 )

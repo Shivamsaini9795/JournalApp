@@ -31,10 +31,10 @@ public class UserService {
             return true;
         } catch (Exception e) {
             log.error("hahahahahahaha");
-            log.warn("hahahahahahaha");
-            log.info("hahahahahahaha");
-            log.debug("hahahahahahaha");
-            log.trace("hahahahahahaha");
+//            log.warn("hahahahahahaha");
+//            log.info("hahahahahahaha");
+//            log.debug("hahahahahahaha");
+//            log.trace("hahahahahahaha");
 
             return false;
         }

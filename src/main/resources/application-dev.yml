@@ -32,3 +32,8 @@ server:
 weather:
   api:
     key: 6eb74d2cfcb4c8de74f67a46f875d20d
+
+
+
+  redis:
+    uri:redis-cli -u redis://default:rsOShSJQz7vlkt4c46mnXZ48WtycpD60@sago-time-reclaimed-22341.db.redis.io:17261

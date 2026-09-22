@@ -1,4 +1,4 @@
-package com.example.journalApp.service;
+package com.example.journalApp.cron;
 
 import com.example.journalApp.scheduler.UserScheduler;
 import org.junit.jupiter.api.Test;

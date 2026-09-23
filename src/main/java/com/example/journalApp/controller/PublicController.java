@@ -34,6 +34,7 @@ public class PublicController {
     @GetMapping("healthcheck")
     public String show()
     {
+        log.info("Health is Ok !");
         return "Ok";
     }
 
@@ -53,7 +54,7 @@ public class PublicController {
             return new ResponseEntity<>(jwt, HttpStatus.OK);
 
         } catch (Exception e){
-            log.error("Exception occurred while createAu    thenticationToken ",e);
+            log.error("Exception occurred while createAuthenticationToken ",e);
             return new ResponseEntity<>("Incorrect username or password",HttpStatus.BAD_REQUEST);
         }
 

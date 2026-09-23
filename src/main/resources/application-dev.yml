@@ -6,14 +6,14 @@ spring:
   data:
     mongodb:
       database: journaldb
-      uri: "mongodb+srv://shivam:shivam%40123@cluster0.ez2svpu.mongodb.net/?appName=Cluster0"
+      uri: ${MONGODB_URI}
       auto-index-creation: true
 
   mail:
     host: smtp.gmail.com
     port: 587
-    username: shivamsaini6013@gmail.com
-    password: ddbfkajlazkfqemg
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     properties:
       mail:
         smtp:
@@ -39,7 +39,7 @@ spring:
     properties:
       security.protocol: SASL_SSL
       sasl.mechanism: PLAIN
-      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username='AMLYWTSRJ4IX34IE' password='cfltOqtHSUUy5Vj0ZNZaC+iaG8oenuK9kn8frlWmuDDcqu3oEDLUsWL3ZjMjH+oA';
+      sasl.jaas.config: ${KAFKA_SASL_JAAS_CONFIG}
       session.timeout.ms: 45000
 
 server:
@@ -49,7 +49,7 @@ server:
 
 weather:
   api:
-    key: 6eb74d2cfcb4c8de74f67a46f875d20d
+    key: ${WEATHER_API_KEY}
 
   redis:
-    uri: "redis-cli -u redis://default:rsOShSJQz7vlkt4c46mnXZ48WtycpD60@sago-time-reclaimed-22341.db.redis.io:17261"
+    uri: ${REDIS_URI}

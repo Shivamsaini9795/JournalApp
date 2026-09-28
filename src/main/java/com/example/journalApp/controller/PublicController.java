@@ -2,8 +2,10 @@ package com.example.journalApp.controller;
 
 import com.example.journalApp.Service.CustomUserDetailServiceImpl;
 import com.example.journalApp.Service.UserService;
+import com.example.journalApp.dto.UserDTO;
 import com.example.journalApp.entity.User;
 import com.example.journalApp.utils.JwtUtil;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +16,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
 
+@Tag(name="Public APIs")
 @RestController
 @Slf4j
 @RequestMapping("/public")
@@ -39,9 +42,14 @@ public class PublicController {
     }
 
     @PostMapping("/signup")
-    public void signup(@RequestBody User user)
+    public void signup(@RequestBody UserDTO user)
     {
-        userService.saveNewUser(user);
+        User Newuser= new User();
+        Newuser.setEmail(user.getEmail());
+        Newuser.setUserName(user.getUserName());
+        Newuser.setPassword(user.getPassword());
+        Newuser.setSentimentAnalysis(user.isSentimentAnalysis());
+        userService.saveNewUser(Newuser);
     }
 
     @PostMapping("/login")

@@ -57,7 +57,10 @@ public class SpringSecurityConfig {
                         .authorizeHttpRequests(request -> request
 
 //                        .requestMatchers("/user/**").permitAll()
-                        .requestMatchers("/public/**").permitAll()
+                        .requestMatchers("/public/**", "/swagger-ui/**",
+                                "/swagger-ui.html",
+                                "/auth/google/**",
+                                "/v3/api-docs/**").permitAll()
 
                         .requestMatchers("/journal/**", "/user/**").authenticated()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
